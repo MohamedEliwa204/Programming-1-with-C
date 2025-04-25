@@ -6,10 +6,10 @@
 int main()
 {
     /****************************************************** scan files **************************************************************/
-    // معالجة بيانات الأطباء
+   
 
     FILE *fptr;
-    fptr = fopen("doctors.txt", "r"); // ملف نصي للأطباء
+    fptr = fopen("doctors.txt", "r"); 
 
     if (fptr == NULL)
     {
@@ -17,7 +17,7 @@ int main()
         return 32;
     }
 
-    // مصفوفات لتخزين بيانات الأطباء
+    
 
     int MAX_USERS = 10 ;
     int MAX_LENGTH = 350 ;
@@ -94,14 +94,14 @@ int main()
     }
 
 
-    // معالجة بيانات المرضى
+    
     FILE *pat;
     FILE *pat2;
-    char patients[MAX_USERS][MAX_LENGTH]; // النص بالكامل من الملف
-    char names[MAX_USERS][40];     // أسماء المرضى
-    char usernames[MAX_USERS][40]; // أسماء المستخدمين
-    char pw[MAX_USERS][40];        // كلمات المرور
-    int users = 0;                 // عدد المرضى عبر البرنامج بالكامل
+    char patients[MAX_USERS][MAX_LENGTH]; 
+    char names[MAX_USERS][40];     
+    char usernames[MAX_USERS][40]; 
+    char pw[MAX_USERS][40];        
+    int users = 0;                 
 
     pat2 = fopen("patients.txt", "r");                                  // the pointer pat2 checks the existence of the patients file by opening in r mode and returns a NULL if its not found
 
@@ -135,7 +135,7 @@ int main()
             int index = 0;
             int z = 0;
 
-            // استخراج الأسماء
+            
             if (strstr(patients[i], "name:") != NULL)       // pointer start searches for the names of the patients in the file written after "name:" if it is found
             {
                 char *start = strstr(patients[i], "name:") + 5;
@@ -146,7 +146,7 @@ int main()
                 names[i][z] = '\0';
             }
 
-            // استخراج أسماء المستخدمين
+            
             index = 0;
             z = 0;
             if (strstr(patients[i], "user:") != NULL)
@@ -159,7 +159,7 @@ int main()
                 usernames[i][z] = '\0';
             }
 
-            // استخراج كلمات المرور
+            
             index = 0;
             z = 0;
             if (strstr(patients[i], "pw:") != NULL)
